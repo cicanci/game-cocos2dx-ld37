@@ -14,6 +14,9 @@ bool MonsterLayer::init()
     createMonster();
     spawnMonster();
     
+    mMonstersKilled = 0;
+    mCookiesInTheJar = COOKIES_IN_THE_JAR;
+    
     this->scheduleUpdate();
     
     return true;
@@ -79,11 +82,17 @@ void MonsterLayer::checkCollision()
 {
     if (mItemRect.intersectsRect(getMonsterRect()))
     {
-        log("Game Over!");
-        //spawnMonster();
+        mCookiesInTheJar--;
         
-        auto scene = GameOverScene::createScene();
-        Director::getInstance()->replaceScene(scene);
+        if (mCookiesInTheJar <= 0)
+        {
+            auto scene = GameOverScene::createScene();
+            Director::getInstance()->replaceScene(scene);
+        }
+        else
+        {
+            spawnMonster();
+        }
     }
 }
 

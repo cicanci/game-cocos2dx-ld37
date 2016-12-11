@@ -32,8 +32,11 @@ private:
     Vec2 mSpawnUp;
     Vec2 mSpawnDown;
     Rect mItemRect;
+    int mCookiesInTheJar;
+    int mMonstersKilled;
 
     const float SPEED_IN_SECONDS = 3;
+    const float COOKIES_IN_THE_JAR = 3;
 };
 
 #endif // __MONSTER_LAYER_H__
