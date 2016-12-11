@@ -1,5 +1,6 @@
 #include "PlayerLayer.h"
 #include "MonsterLayer.h"
+#include "HudLayer.h"
 
 bool PlayerLayer::init()
 {
@@ -118,7 +119,7 @@ void PlayerLayer::checkCollision()
     
     if (monster.intersectsRect(player))
     {
-        log("Killed Monster!");
+        HudLayer::Instance()->updateText(0, 1);
         MonsterLayer::Instance()->spawnMonster();
     }
 }

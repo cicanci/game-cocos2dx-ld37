@@ -29,7 +29,7 @@ private:
     bool mMoveRight;
     bool mMoveUp;
     
-    const int SPEED = 250;
+    const int SPEED = 200;
 };
 
 #endif // __PLAYER_LAYER_H__

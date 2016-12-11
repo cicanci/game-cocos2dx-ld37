@@ -2,6 +2,7 @@
 #include "LevelLayer.h"
 #include "PlayerLayer.h"
 #include "MonsterLayer.h"
+#include "HudLayer.h"
 
 Scene* GameScene::createScene()
 {
@@ -15,6 +16,9 @@ Scene* GameScene::createScene()
     
     auto monster = MonsterLayer::create();
     scene->addChild(monster);
+    
+    auto hud = HudLayer::create();
+    scene->addChild(hud);
     
     return scene;
 }

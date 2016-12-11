@@ -1,4 +1,5 @@
 #include "MonsterLayer.h"
+#include "HudLayer.h"
 #include "GameOverScene.h"
 
 MonsterLayer* MonsterLayer::mInstance = 0;
@@ -86,6 +87,7 @@ void MonsterLayer::checkCollision()
 {
     if (mItemRect.intersectsRect(getMonsterRect()))
     {
+        HudLayer::Instance()->updateText(-1, 0);
         mCookiesInTheJar--;
         
         if (mCookiesInTheJar <= 0)
