@@ -39,6 +39,11 @@ void MonsterLayer::createMonster()
 
 void MonsterLayer::spawnMonster()
 {
+    if (mMonster->isRunning())
+    {
+        mMonster->stopAllActions();
+    }
+    
     mMonster->setPosition(getRandomSpawn());
     
     auto moveTo = MoveTo::create(SPEED_IN_SECONDS, Vec2(mItemRect.origin.x, mItemRect.origin.y));
@@ -74,6 +79,7 @@ void MonsterLayer::checkCollision()
     if (mItemRect.intersectsRect(getMonsterRect()))
     {
         log("Game Over!");
+        spawnMonster();
     }
 }
 

@@ -33,7 +33,7 @@ private:
     Vec2 mSpawnDown;
     Rect mItemRect;
 
-    const float SPEED_IN_SECONDS = 5;
+    const float SPEED_IN_SECONDS = 4;
 };
 
 #endif // __MONSTER_LAYER_H__
