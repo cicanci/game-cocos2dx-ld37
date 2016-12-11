@@ -78,6 +78,12 @@
 		DD425A301DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */; };
 		DD52BBEF1DFD95AA00C1DE51 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */; };
 		DD52BBF01DFD95AA00C1DE51 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */; };
+		DD9ECF3F1DFDEBBA002721F0 /* background_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DD9ECF3E1DFDEBBA002721F0 /* background_menu.png */; };
+		DD9ECF401DFDEBBA002721F0 /* background_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = DD9ECF3E1DFDEBBA002721F0 /* background_menu.png */; };
+		DD9ECF441DFDEBD3002721F0 /* MenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD9ECF421DFDEBD3002721F0 /* MenuLayer.cpp */; };
+		DD9ECF451DFDEBD3002721F0 /* MenuLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD9ECF421DFDEBD3002721F0 /* MenuLayer.cpp */; };
+		DD9ECF481DFDECA0002721F0 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD9ECF461DFDECA0002721F0 /* MenuScene.cpp */; };
+		DD9ECF491DFDECA0002721F0 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD9ECF461DFDECA0002721F0 /* MenuScene.cpp */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
 		ED545A7E1B68A1FA00C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7D1B68A1FA00C3958E /* libiconv.dylib */; };
 /* End PBXBuildFile section */
@@ -188,6 +194,11 @@
 		DD425A2E1DFDD8A800CF18CF /* MonsterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterLayer.h; sourceTree = "<group>"; };
 		DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		DD52BBEE1DFD95AA00C1DE51 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
+		DD9ECF3E1DFDEBBA002721F0 /* background_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_menu.png; sourceTree = "<group>"; };
+		DD9ECF421DFDEBD3002721F0 /* MenuLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuLayer.cpp; sourceTree = "<group>"; };
+		DD9ECF431DFDEBD3002721F0 /* MenuLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuLayer.h; sourceTree = "<group>"; };
+		DD9ECF461DFDECA0002721F0 /* MenuScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MenuScene.cpp; sourceTree = "<group>"; };
+		DD9ECF471DFDECA0002721F0 /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -316,6 +327,7 @@
 			children = (
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
+				DD9ECF3E1DFDEBBA002721F0 /* background_menu.png */,
 				DD425A1C1DFDB9B100CF18CF /* background_room.png */,
 				DD425A271DFDD63700CF18CF /* item_cookie.png */,
 				DD425A2A1DFDD87F00CF18CF /* monster_idle.png */,
@@ -394,6 +406,8 @@
 				DD425A211DFDBBA900CF18CF /* PlayerLayer.h */,
 				DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */,
 				DD425A2E1DFDD8A800CF18CF /* MonsterLayer.h */,
+				DD9ECF421DFDEBD3002721F0 /* MenuLayer.cpp */,
+				DD9ECF431DFDEBD3002721F0 /* MenuLayer.h */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -403,6 +417,8 @@
 			children = (
 				DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */,
 				DD52BBEE1DFD95AA00C1DE51 /* GameScene.h */,
+				DD9ECF461DFDECA0002721F0 /* MenuScene.cpp */,
+				DD9ECF471DFDECA0002721F0 /* MenuScene.h */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -525,6 +541,7 @@
 				DD425A1D1DFDB9B100CF18CF /* background_room.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				DD9ECF3F1DFDEBBA002721F0 /* background_menu.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
@@ -543,6 +560,7 @@
 			files = (
 				DD425A2C1DFDD87F00CF18CF /* monster_idle.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				DD9ECF401DFDEBBA002721F0 /* background_menu.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				DD425A1B1DFDB9A100CF18CF /* player_idle.png in Resources */,
 				DD425A291DFDD63700CF18CF /* item_cookie.png in Resources */,
@@ -564,7 +582,9 @@
 				46880B8A19C43A87006E1F66 /* LevelLayer.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DD52BBEF1DFD95AA00C1DE51 /* GameScene.cpp in Sources */,
+				DD9ECF441DFDEBD3002721F0 /* MenuLayer.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				DD9ECF481DFDECA0002721F0 /* MenuScene.cpp in Sources */,
 				DD425A2F1DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
@@ -574,6 +594,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9ECF451DFDEBD3002721F0 /* MenuLayer.cpp in Sources */,
+				DD9ECF491DFDECA0002721F0 /* MenuScene.cpp in Sources */,
 				DD425A301DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,

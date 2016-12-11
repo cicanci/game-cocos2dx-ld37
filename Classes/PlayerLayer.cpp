@@ -8,7 +8,7 @@ bool PlayerLayer::init()
         return false;
     }
     
-    loadPlayer();
+    createPlayer();
     initTouchEvent();
     
     this->scheduleUpdate();
@@ -16,7 +16,7 @@ bool PlayerLayer::init()
     return true;
 }
 
-void PlayerLayer::loadPlayer()
+void PlayerLayer::createPlayer()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();

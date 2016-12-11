@@ -1,17 +1,16 @@
-#ifndef __PLAYER_LAYER_H__
-#define __PLAYER_LAYER_H__
+#ifndef __MENU_LAYER_H__
+#define __MENU_LAYER_H__
 
 #include "cocos2d.h"
 
 USING_NS_CC;
 
-class PlayerLayer : public Layer
+class MenuLayer : public Layer
 {
 public:
     virtual bool init();
-    CREATE_FUNC(PlayerLayer);
+    CREATE_FUNC(MenuLayer);
     
-    void update(float dt);
     bool onTouchBegan(Touch* touch, Event* event);
     void onTouchMoved(Touch *touch, Event *event);
     void onTouchEnded(Touch *touch, Event *event);
@@ -19,17 +18,9 @@ public:
     
 private:
     void initTouchEvent();
-    void createPlayer();
-    void checkCollision();
+    void createMenu();
     
     EventListenerTouchOneByOne* mTouchListener;
-    Sprite* mPlayerIdle;
-    Sprite* mPlayerAttack;
-    bool mIsMoving;
-    bool mMoveRight;
-    bool mMoveUp;
-    
-    const int SPEED = 250;
 };
 
-#endif // __PLAYER_LAYER_H__
+#endif // __MENU_LAYER_H__
