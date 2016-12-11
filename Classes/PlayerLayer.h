@@ -23,7 +23,8 @@ private:
     void checkCollision();
     
     EventListenerTouchOneByOne* mTouchListener;
-    Sprite* mPlayer;
+    Sprite* mPlayerIdle;
+    Sprite* mPlayerAttack;
     bool mIsMoving;
     bool mMoveRight;
     bool mMoveUp;

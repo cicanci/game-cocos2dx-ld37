@@ -21,9 +21,14 @@ void PlayerLayer::loadPlayer()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    mPlayer = Sprite::create("player_idle.png");
-    mPlayer->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
-    this->addChild(mPlayer, 1);
+    mPlayerIdle = Sprite::create("player_idle.png");
+    mPlayerIdle->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
+    this->addChild(mPlayerIdle, 1);
+    
+    mPlayerAttack = Sprite::create("player_attack.png");
+    mPlayerAttack->setPosition(mPlayerIdle->getPosition());
+    mPlayerAttack->setVisible(false);
+    this->addChild(mPlayerAttack, 1);
 }
 
 void PlayerLayer::initTouchEvent()
@@ -51,12 +56,17 @@ void PlayerLayer::onTouchMoved(Touch *touch, Event *event)
     auto visibleSize = Director::getInstance()->getVisibleSize();
     mMoveRight = (touch->getLocation().x > visibleSize.width*0.5f) ? true : false;
     mMoveUp = (touch->getLocation().y > visibleSize.height*0.5f) ? true : false;
+
     mIsMoving = true;
+    mPlayerIdle->setVisible(false);
+    mPlayerAttack->setVisible(true);
 }
 
 void PlayerLayer::onTouchEnded(Touch *touch, Event *event)
 {
     mIsMoving = false;
+    mPlayerIdle->setVisible(true);
+    mPlayerAttack->setVisible(false);
 }
 
 void PlayerLayer::onTouchCancelled(Touch *touch, Event *event)
@@ -73,12 +83,14 @@ void PlayerLayer::update(float dt)
         if (mMoveRight)
         {
             position.x -= (SPEED) * dt;
-            mPlayer->setFlippedX(true);
+            mPlayerIdle->setFlippedX(true);
+            mPlayerAttack->setFlippedX(true);
         }
         else
         {
-            mPlayer->setFlippedX(false);
             position.x += (SPEED) * dt;
+            mPlayerIdle->setFlippedX(false);
+            mPlayerAttack->setFlippedX(false);
         }
         
         if (mMoveUp)
@@ -90,22 +102,7 @@ void PlayerLayer::update(float dt)
             position.y += (SPEED) * dt;
         }
         
-        mPlayer->setPosition(mPlayer->getPosition() + ((-1)*position));
-        
-        //checkCollision();
-    }
-}
-
-void PlayerLayer::checkCollision()
-{
-    Rect level = LevelLayer::Instance()->getLevelRect();
-    Rect player = Rect(mPlayer->getPosition().x,
-                       mPlayer->getPosition().y,
-                       mPlayer->getContentSize().width,
-                       mPlayer->getContentSize().height);
-    
-    if (!player.intersectsRect(level))
-    {
-        mIsMoving = false;
+        mPlayerIdle->setPosition(mPlayerIdle->getPosition() + ((-1)*position));
+        mPlayerAttack->setPosition(mPlayerIdle->getPosition());
     }
 }
