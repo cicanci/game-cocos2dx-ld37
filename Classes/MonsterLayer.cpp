@@ -61,12 +61,16 @@ Vec2 MonsterLayer::getRandomSpawn()
 
     switch (spawn) {
         case 0:
+            mMonster->setFlippedX(false);
             return mSpawnUp;
         case 1:
+            mMonster->setFlippedX(true);
             return mSpawnRight;
         case 2:
+            mMonster->setFlippedX(true);
             return mSpawnDown;
         case 3:
+            mMonster->setFlippedX(false);
             return mSpawnLeft;
         default:
             return Vec2(0, 0);
