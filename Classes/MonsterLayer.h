@@ -8,17 +8,25 @@ USING_NS_CC;
 class MonsterLayer : public Layer
 {
 public:
+    MonsterLayer() { mInstance = this; }
+    ~MonsterLayer() { mInstance = NULL; }
+    static MonsterLayer* Instance() { return mInstance; }
+
     virtual bool init();
     CREATE_FUNC(MonsterLayer);
     
     void update(float dt);
+    Rect getMonsterRect();
+    void spawnMonster();
     
 private:
     void createSpawnPoints();
-    void spawnMonster();
+    void createMonster();
     Vec2 getRandomSpawn();
     void checkCollision();
 
+    static MonsterLayer* mInstance;
+    Sprite* mMonster;
     Vec2 mSpawnRight;
     Vec2 mSpawnLeft;
     Vec2 mSpawnUp;

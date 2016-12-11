@@ -1,5 +1,5 @@
 #include "PlayerLayer.h"
-#include "LevelLayer.h"
+#include "MonsterLayer.h"
 
 bool PlayerLayer::init()
 {
@@ -104,5 +104,22 @@ void PlayerLayer::update(float dt)
         
         mPlayerIdle->setPosition(mPlayerIdle->getPosition() + ((-1)*position));
         mPlayerAttack->setPosition(mPlayerIdle->getPosition());
+        
+        checkCollision();
     }
 }
+
+void PlayerLayer::checkCollision()
+{
+    Rect monster = MonsterLayer::Instance()->getMonsterRect();
+    
+    Rect player = Rect(mPlayerAttack->getPosition().x, mPlayerAttack->getPosition().y,
+                       mPlayerAttack->getContentSize().width, mPlayerAttack->getContentSize().height);
+    
+    if (monster.intersectsRect(player))
+    {
+        log("Killed Monster!");
+        MonsterLayer::Instance()->spawnMonster();
+    }
+}
+

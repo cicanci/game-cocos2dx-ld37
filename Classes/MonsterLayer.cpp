@@ -1,5 +1,7 @@
 #include "MonsterLayer.h"
 
+MonsterLayer* MonsterLayer::mInstance = 0;
+
 bool MonsterLayer::init()
 {
     if (!Layer::init())
@@ -8,6 +10,7 @@ bool MonsterLayer::init()
     }
     
     createSpawnPoints();
+    createMonster();
     spawnMonster();
     
     this->scheduleUpdate();
@@ -28,14 +31,18 @@ void MonsterLayer::createSpawnPoints()
     mItemRect = Rect(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y, 100, 100);
 }
 
+void MonsterLayer::createMonster()
+{
+    mMonster = Sprite::create("monster_idle.png");
+    this->addChild(mMonster, 3);
+}
+
 void MonsterLayer::spawnMonster()
-{    
-    auto monster = Sprite::create("monster_idle.png");
-    monster->setPosition(getRandomSpawn());
-    this->addChild(monster, 3);
+{
+    mMonster->setPosition(getRandomSpawn());
     
     auto moveTo = MoveTo::create(SPEED_IN_SECONDS, Vec2(mItemRect.origin.x, mItemRect.origin.y));
-    monster->runAction(moveTo);
+    mMonster->runAction(moveTo);
 }
 
 Vec2 MonsterLayer::getRandomSpawn()
@@ -59,5 +66,20 @@ Vec2 MonsterLayer::getRandomSpawn()
 
 void MonsterLayer::update(float dt)
 {
-    
+    checkCollision();
+}
+
+void MonsterLayer::checkCollision()
+{
+    if (mItemRect.intersectsRect(getMonsterRect()))
+    {
+        log("Game Over!");
+    }
+}
+
+Rect MonsterLayer::getMonsterRect()
+{
+    return Rect(mMonster->getPosition().x, mMonster->getPosition().y,
+                mMonster->getContentSize().width, mMonster->getContentSize().height);
+
 }
