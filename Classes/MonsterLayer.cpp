@@ -1,4 +1,5 @@
 #include "MonsterLayer.h"
+#include "GameOverScene.h"
 
 MonsterLayer* MonsterLayer::mInstance = 0;
 
@@ -79,7 +80,10 @@ void MonsterLayer::checkCollision()
     if (mItemRect.intersectsRect(getMonsterRect()))
     {
         log("Game Over!");
-        spawnMonster();
+        //spawnMonster();
+        
+        auto scene = GameOverScene::createScene();
+        Director::getInstance()->replaceScene(scene);
     }
 }
 
