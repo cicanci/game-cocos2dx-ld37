@@ -70,6 +70,12 @@
 		DD425A231DFDBBA900CF18CF /* PlayerLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD425A201DFDBBA900CF18CF /* PlayerLayer.cpp */; };
 		DD425A251DFDCCC100CF18CF /* player_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A241DFDCCC100CF18CF /* player_attack.png */; };
 		DD425A261DFDCCC100CF18CF /* player_attack.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A241DFDCCC100CF18CF /* player_attack.png */; };
+		DD425A281DFDD63700CF18CF /* item_cookie.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A271DFDD63700CF18CF /* item_cookie.png */; };
+		DD425A291DFDD63700CF18CF /* item_cookie.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A271DFDD63700CF18CF /* item_cookie.png */; };
+		DD425A2B1DFDD87F00CF18CF /* monster_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A2A1DFDD87F00CF18CF /* monster_idle.png */; };
+		DD425A2C1DFDD87F00CF18CF /* monster_idle.png in Resources */ = {isa = PBXBuildFile; fileRef = DD425A2A1DFDD87F00CF18CF /* monster_idle.png */; };
+		DD425A2F1DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */; };
+		DD425A301DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */; };
 		DD52BBEF1DFD95AA00C1DE51 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */; };
 		DD52BBF01DFD95AA00C1DE51 /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */; };
 		ED545A7C1B68A1F400C3958E /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = ED545A7B1B68A1F400C3958E /* libiconv.dylib */; };
@@ -176,6 +182,10 @@
 		DD425A201DFDBBA900CF18CF /* PlayerLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlayerLayer.cpp; sourceTree = "<group>"; };
 		DD425A211DFDBBA900CF18CF /* PlayerLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerLayer.h; sourceTree = "<group>"; };
 		DD425A241DFDCCC100CF18CF /* player_attack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = player_attack.png; sourceTree = "<group>"; };
+		DD425A271DFDD63700CF18CF /* item_cookie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = item_cookie.png; sourceTree = "<group>"; };
+		DD425A2A1DFDD87F00CF18CF /* monster_idle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = monster_idle.png; sourceTree = "<group>"; };
+		DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MonsterLayer.cpp; sourceTree = "<group>"; };
+		DD425A2E1DFDD8A800CF18CF /* MonsterLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MonsterLayer.h; sourceTree = "<group>"; };
 		DD52BBED1DFD95AA00C1DE51 /* GameScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GameScene.cpp; sourceTree = "<group>"; };
 		DD52BBEE1DFD95AA00C1DE51 /* GameScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
@@ -307,6 +317,8 @@
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				DD425A1C1DFDB9B100CF18CF /* background_room.png */,
+				DD425A271DFDD63700CF18CF /* item_cookie.png */,
+				DD425A2A1DFDD87F00CF18CF /* monster_idle.png */,
 				DD425A241DFDCCC100CF18CF /* player_attack.png */,
 				DD425A191DFDB9A100CF18CF /* player_idle.png */,
 			);
@@ -380,6 +392,8 @@
 				46880B8719C43A87006E1F66 /* LevelLayer.h */,
 				DD425A201DFDBBA900CF18CF /* PlayerLayer.cpp */,
 				DD425A211DFDBBA900CF18CF /* PlayerLayer.h */,
+				DD425A2D1DFDD8A800CF18CF /* MonsterLayer.cpp */,
+				DD425A2E1DFDD8A800CF18CF /* MonsterLayer.h */,
 			);
 			name = Layers;
 			sourceTree = "<group>";
@@ -497,7 +511,9 @@
 			files = (
 				DD425A251DFDCCC100CF18CF /* player_attack.png in Resources */,
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
+				DD425A281DFDD63700CF18CF /* item_cookie.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				DD425A2B1DFDD87F00CF18CF /* monster_idle.png in Resources */,
 				DD425A1A1DFDB9A100CF18CF /* player_idle.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
@@ -525,9 +541,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD425A2C1DFDD87F00CF18CF /* monster_idle.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				DD425A1B1DFDB9A100CF18CF /* player_idle.png in Resources */,
+				DD425A291DFDD63700CF18CF /* item_cookie.png in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				DD425A261DFDCCC100CF18CF /* player_attack.png in Resources */,
 				DD425A1E1DFDB9B100CF18CF /* background_room.png in Resources */,
@@ -547,6 +565,7 @@
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				DD52BBEF1DFD95AA00C1DE51 /* GameScene.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				DD425A2F1DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +574,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD425A301DFDD8A800CF18CF /* MonsterLayer.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 				46880B8B19C43A87006E1F66 /* LevelLayer.cpp in Sources */,

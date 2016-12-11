@@ -23,12 +23,12 @@ void PlayerLayer::loadPlayer()
 
     mPlayerIdle = Sprite::create("player_idle.png");
     mPlayerIdle->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
-    this->addChild(mPlayerIdle, 1);
+    this->addChild(mPlayerIdle, 2);
     
     mPlayerAttack = Sprite::create("player_attack.png");
     mPlayerAttack->setPosition(mPlayerIdle->getPosition());
     mPlayerAttack->setVisible(false);
-    this->addChild(mPlayerAttack, 1);
+    this->addChild(mPlayerAttack, 2);
 }
 
 void PlayerLayer::initTouchEvent()

@@ -21,4 +21,8 @@ void LevelLayer::initBackground()
     mBackground->setScale(visibleSize.width / mBackground->getContentSize().width, visibleSize.height / mBackground->getContentSize().height);
     mBackground->setPosition(Vec2(visibleSize.width*0.5f + origin.x, visibleSize.height*0.5f + origin.y));
     this->addChild(mBackground, 0);
+    
+    mItem = Sprite::create("item_cookie.png");
+    mItem->setPosition(mBackground->getPosition());
+    this->addChild(mItem, 1);
 }

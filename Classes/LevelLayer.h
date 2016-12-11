@@ -15,6 +15,7 @@ private:
     void initBackground();
     
     Sprite* mBackground;
+    Sprite* mItem;
 };
 
 #endif // __LEVEL_LAYER_H__
